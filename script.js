@@ -1,2 +1,0 @@
-//rama dairo
-//rama angela
