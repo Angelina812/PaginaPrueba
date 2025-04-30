@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Vacation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans">
+
+    <!-- Navbar Sticky -->
+    <nav class="sticky top-0 shadow-md flex justify-between items-center px-6 py-4 z-50">
+        <!-- Logo Izquierdo -->
+        <div class="flex items-center">
+            <img src="logo dream.png" alt="Logo" class="h-10">
+        </div>
+        <!-- Menú Derecho -->
+        <div class="flex items-center space-x-6">
+            <a href="#inicio" class="text-gray-700 hover:text-blue-500">Inicio</a>
+            <a href="#quienes-somos" class="text-gray-700 hover:text-blue-500">Quiénes Somos</a>
+
+            <!-- Servicios desplegable -->
+            <div class="relative group">
+                <button class="text-gray-700 hover:text-blue-500">Servicios</button>
+                <div class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded">
+                    <a href="#paquetes" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paquetes Completos</a>
+                    <a href="#hotel" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Hotel</a>
+                    <a href="#vuelos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Vuelos</a>
+                    <a href="#tours" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tours</a>
+                    <a href="#asesorias" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Asesorías</a>
+                </div>
+            </div>
+
+            <a href="#contactanos" class="text-gray-700 hover:text-blue-500">Contáctanos</a>
+
+            <!-- Logo de inicio de sesión -->
+            <a href="#login">
+                <img src="ruta-a-logo-login.png" alt="Login" class="h-8">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Imagen de fondo con texto centrado -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('ruta-a-tu-imagen.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold">Texto Principal</h1>
+            <p class="mt-4 text-lg md:text-2xl">Subtexto o slogan aquí</p>
+            <button class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full">Botón Principal</button>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="py-20 px-6 bg-gray-100">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Nuestros Servicios</h2>
+            <p class="text-gray-600 mt-4">Descripción breve de los servicios.</p>
+        </div>
+        <!-- Aquí puedes agregar tarjetas de servicios -->
+    </section>
+
+    <!-- Sección de Nosotros -->
+    <section id="quienes-somos" class="py-20 px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Quiénes Somos</h2>
+            <p class="text-gray-600 mt-4">Información sobre la empresa o proyecto.</p>
+        </div>
+        <!-- Aquí puedes agregar contenido adicional de nosotros -->
+    </section>
+
+    <!-- Sección de Contáctanos -->
+    <section id="contactanos" class="py-20 px-6 bg-gray-100">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Contáctanos</h2>
+            <p class="text-gray-600 mt-4">Formulario o información de contacto.</p>
+        </div>
+        <!-- Aquí puedes agregar un formulario de contacto -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Redes Sociales -->
+            <div>
+                <h3 class="font-bold mb-4">Redes Sociales</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Facebook</a></li>
+                    <li><a href="#" class="hover:underline">Instagram</a></li>
+                    <li><a href="#" class="hover:underline">Twitter</a></li>
+                </ul>
+            </div>
+
+            <!-- Política y Certificados -->
+            <div>
+                <h3 class="font-bold mb-4">Política y Certificados</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Política de Privacidad</a></li>
+                    <li><a href="#" class="hover:underline">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:underline">Certificados de Calidad</a></li>
+                </ul>
+            </div>
+
+            <!-- Preguntas Frecuentes -->
+            <div>
+                <h3 class="font-bold mb-4">Preguntas Frecuentes</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">¿Cómo reservar?</a></li>
+                    <li><a href="#" class="hover:underline">¿Formas de pago?</a></li>
+                    <li><a href="#" class="hover:underline">¿Políticas de cancelación?</a></li>
+                </ul>
+            </div>
+
+            <!-- Logo o Información Extra -->
+            <div class="flex items-center justify-center md:justify-end">
+                <img src="ruta-a-logo-footer.png" alt="Logo Footer" class="h-12">
+            </div>
+        </div>
+        <div class="text-center mt-8 text-gray-400 text-sm">
+            © 2025 Tu Empresa - Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
+
