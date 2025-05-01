@@ -2,5 +2,35 @@
 @import "tailwindcss";
 
 nav {
-  background-color: 	#1caab8; 
+  background-color: 	#4ed8e7 ; 
+  font-size: 1.25rem;
+}
+nav a {
+  transition: transform 0.3s ease;
+}
+nav a:hover {
+  transform: scale(1.1); 
+}
+
+
+.bg-personalizado {
+  background-image: url('../img/Playa1.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.boton-1 {
+  background-color: 	#238f9b ;  
+  transition: background-color 0.3s ease;
+}
+.boton-1:hover{
+  background-color: #194a6b;
+}
+
+.tarjetas {
+  transition: transform 0.3s ease;
+}
+.tarjetas {
+  transform: scale(1.1); 
 }
