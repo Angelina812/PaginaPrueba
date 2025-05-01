@@ -13,52 +13,122 @@
     <nav class="sticky top-0 shadow-md flex justify-between items-center px-6 py-4 z-50">
         <!-- Logo Izquierdo -->
         <div class="flex items-center">
-            <img src="logo dream.png" alt="Logo" class="h-10">
+            <img src="../img/logo.png" alt="Logo" class="h-16">
         </div>
         <!-- Menú Derecho -->
         <div class="flex items-center space-x-6">
-            <a href="#inicio" class="text-gray-700 hover:text-blue-500">Inicio</a>
-            <a href="#quienes-somos" class="text-gray-700 hover:text-blue-500">Quiénes Somos</a>
+            <a href="#inicio" class= " text-white font-bold">Inicio</a>
+            <a href="#quienes-somos" class=" text-white font-bold ">Quiénes Somos</a>
 
             <!-- Servicios desplegable -->
-            <div class="relative group">
-                <button class="text-gray-700 hover:text-blue-500">Servicios</button>
-                <div class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded">
-                    <a href="#paquetes" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paquetes Completos</a>
-                    <a href="#hotel" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Hotel</a>
-                    <a href="#vuelos" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Vuelos</a>
-                    <a href="#tours" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tours</a>
-                    <a href="#asesorias" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Asesorías</a>
+            <div class="relative group " id="menu-container">
+                 
+                 <a href="#servicios" class=" text-white font-bold"> Servicios </a> 
+                 <button  
+                 onclick="toggleMenu()" class=" text-white font-bold"> ▾ </button> 
+        
+                <div 
+                  id="dropdown-menu"
+                  class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded z-50 "
+                  onmouseenter="keepMenuOpen()" 
+                  onmouseleave="closeMenu()"
+                >
+                  <a href="#paquetes" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Paquetes Completos</a>
+                  <a href="#hotel" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Hotel</a>
+                  <a href="#vuelos" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Vuelos</a>
+                  <a href="#tours" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Tours</a>
+                  <a href="#asesorias" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Asesorías</a>
                 </div>
-            </div>
+              </div>
 
-            <a href="#contactanos" class="text-gray-700 hover:text-blue-500">Contáctanos</a>
+            <a href="#contactanos" class=" text-white font-bold">Contáctanos</a>
 
             <!-- Logo de inicio de sesión -->
             <a href="#login">
-                <img src="ruta-a-logo-login.png" alt="Login" class="h-8">
+                <img src="../img/login.png" alt="Login" class="h-8">
             </a>
         </div>
     </nav>
 
-    <!-- Imagen de fondo con texto centrado -->
-    <section class="relative h-screen bg-cover bg-center" style="background-image: url('ruta-a-tu-imagen.jpg');">
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
-            <h1 class="text-4xl md:text-6xl font-bold">Texto Principal</h1>
-            <p class="mt-4 text-lg md:text-2xl">Subtexto o slogan aquí</p>
-            <button class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full">Botón Principal</button>
-        </div>
-    </section>
+   <!-- Imagen de fondo con texto centrado -->
+   <section class="relative h-screen bg-personalizado">   
+    <div class="absolute inset-0 bg-black bg-opacity-25 flex flex-col justify-start items-center text-center text-white pt-10 px-4">
+        <img src="../img/logo.png" alt="logo" class="w-42 ">  
+        <h1 class="text-4xl md:text-6xl font-bold">¡Descubre el mundo con nosotros!</h1>
+        <p class="mt-4 text-lg md:text-2xl max-w-3xl">
+            En <b>Dream Vacation</b>, creemos que cada viaje es una oportunidad 
+            para crear recuerdos inolvidables. Somos tu aliado en el turismo, ofreciendo paquetes turísticos
+            a medida para satisfacer tus sueños de aventura y relajación.
+        </p>
+        <button class="mt-6 px-6 py-3 rounded-full font-bold boton-1"> Cotiza aqui</button>
+    </div>
+  </section>
 
     <!-- Sección de Servicios -->
-    <section id="servicios" class="py-20 px-6 bg-gray-100">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold">Nuestros Servicios</h2>
-            <p class="text-gray-600 mt-4">Descripción breve de los servicios.</p>
+    <h2 class="text-3xl font-bold">Nuestros servicios</h2>
+    <div class="relative servicios">
+        <!-- Flecha izquierda -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 19l-7-7 7-7" /></svg>
+        </button>
+    
+        <!-- Contenedor de tarjetas -->
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-500 space-x-6">
+            <!-- Tarjeta 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+              <img src="../img/planescompletos.png" alt="Servicio 1" class="w-full h-40 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Planes Completos</h3>
+              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
+            </div>
+    
+            <!-- Tarjeta 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+              <img src="../img/hoteles+vuelos.jpeg" alt="Servicio 2" class="w-full h-40 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Vuelos + hotel </h3>
+              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
+            </div>
+    
+            <!-- Tarjeta 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+              <img src="../img/tours.jpeg" alt="Servicio 3" class="w-full h-40 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Tours</h3>
+              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
+            </div>
+    
+            <!-- Tarjeta 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+              <img src="../img/grupos.png" alt="Servicio 4" class="w-full h-40 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Planes para grupos </h3>
+              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
+            </div>
+    
+            <!-- Tarjeta 5 -->
+            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+              <img src="../img/vuelos.jpeg" alt="Servicio 5" class="w-full h-40 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Vuelos</h3>
+              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
+            </div>
+    
+            <!-- Tarjeta 6 -->
+            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+              <img src="img/servicio6.jpg" alt="Servicio 6" class="w-full h-40 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Hoteles</h3>
+              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
+            </div>
+          </div>
         </div>
-        <!-- Aquí puedes agregar tarjetas de servicios -->
+    
+        <!-- Flecha derecha -->
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
     </section>
-
     <!-- Sección de Nosotros -->
     <section id="quienes-somos" class="py-20 px-6">
         <div class="text-center mb-12">
@@ -119,7 +189,7 @@
             © 2025 Tu Empresa - Todos los derechos reservados.
         </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
 
