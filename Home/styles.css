@@ -38,10 +38,124 @@ body{
   transform: scale(1.1); 
 }
 
+ramaDairo
+/*CSS IMAGEN TODOS*/
 .imagen-nosotros {
   background-image: url('ruta/a/tu-imagen.jpg'); /* Cambia esta ruta */
 }
 
+
+.imagen-redonda {
+  width: 580px;
+  height: 500px;
+  border-radius:10%;
+  object-fit: cover; /* Esto asegura que la imagen se recorte bien */
+}
+
+
+/*CSS BOTON CONOCENOS*/
+.boton-container {
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente */
+  margin-top: 20px; /* Añade espacio arriba */
+}
+
+.btn-conocenos {
+  display: inline-block;
+  background-color: #2d869e; /* Azul */
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px; /* Bordes más redondeados */
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-conocenos:hover {
+  background-color: #0baed7; /* Azul más oscuro al pasar el mouse */
+  transform: scale(1.05);     /* Efecto de agrandamiento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.btn-conocenos:active {
+  transform: scale(1); /* Reduce el agrandamiento al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra al hacer clic */
+}
+
+.btn-conocenos{
+  margin-top: 20px;
+}
+
+
+/*texto quienes somos*/
+h2{
+  text-align: center;
+}
+
+
+.text-gray-600 {
+  font-family: 'Roboto', sans-serif; /* Aplica la nueva fuente */
+  font-size: 16px;  /* Ajusta el tamaño de la fuente */
+  color: #000000;   /* Para asegurarte que el texto tenga el color gris */
+}
+
+
+/*imagenes con el texto debajo en la pagina quienes somos*/
+.footer-column .logos {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column .logos li {
+  text-align: center; /* Centra los logos y texto debajo */
+  margin: 0 15px; /* Espaciado entre los elementos */
+}
+
+.footer-column .logos li p {
+  margin-top: 8px; /* Espacio entre el logo y el texto */
+  font-size: 14px; /* Tamaño del texto */
+  color: #555; /* Color del texto */
+}
+
+.footer-column {
+  margin-top: 20px; /* Ajusta el valor según el espacio que necesites */
+}
+
+
+.img-calidad {
+  width: 80px;       /* Tamaño deseado */
+  height: auto;      /* Mantiene la proporción */
+  display: block;    /* Para evitar espacios extra debajo de la imagen */
+  margin: 0 auto;    /* Centrar si es necesario */
+}
+.img-asesoria {
+  width: 80px;       /* Tamaño deseado */
+  height: auto;      /* Mantiene la proporción */
+  display: block;    /* Para evitar espacios extra debajo de la imagen */
+  margin: 0 auto;    /* Centrar si es necesario */
+}
+.img-experiencia {
+  width: 100px;       /* Tamaño deseado */
+  height: auto;      /* Mantiene la proporción */
+  display: block;    /* Para evitar espacios extra debajo de la imagen */
+  margin: 0 auto;    /* Centrar si es necesario */
+}
+.img-buenservicio {
+  width: 80px;       /* Tamaño deseado */
+  height: auto;      /* Mantiene la proporción */
+  display: block;    /* Para evitar espacios extra debajo de la imagen */
+  margin: 0 auto;    /* Centrar si es necesario */
+}
+
+.quienes-fondo {
+  background-color: #ffffff; /* Azul claro, cambia al que quieras */
+}
 .imagen-servicio {
   width: 300%;
   height: 200px;         
