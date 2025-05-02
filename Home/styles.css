@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 nav {
-  background-color: 	#4ed8e7 ; 
+  background-color:  #0694ab ; 
   font-size: 1.25rem;
 }
 nav a {
@@ -12,6 +12,9 @@ nav a:hover {
   transform: scale(1.1); 
 }
 
+body{
+  background-color: #ffffff;
+}
 
 .bg-personalizado {
   background-image: url('../img/Playa1.jpg'); 
@@ -21,11 +24,11 @@ nav a:hover {
 }
 
 .boton-1 {
-  background-color: 	#238f9b ;  
+  background-color: #045f78;	
   transition: background-color 0.3s ease;
 }
 .boton-1:hover{
-  background-color: #194a6b;
+  background-color: #0694ab;  
 }
 
 .tarjetas {
@@ -35,11 +38,12 @@ nav a:hover {
   transform: scale(1.1); 
 }
 
-
+ramaDairo
 /*CSS IMAGEN TODOS*/
 .imagen-nosotros {
   background-image: url('ruta/a/tu-imagen.jpg'); /* Cambia esta ruta */
 }
+
 
 .imagen-redonda {
   width: 580px;
@@ -151,4 +155,18 @@ h2{
 
 .quienes-fondo {
   background-color: #ffffff; /* Azul claro, cambia al que quieras */
+}
+.imagen-servicio {
+  width: 300%;
+  height: 200px;         
+  border-radius: 8px;    
+  margin-bottom: 1rem;   
+}
+
+h2{
+  text-align: center;
+}
+.tarjetas{
+  border: 2px solid #0694ab;
+  padding: 16px;
 }

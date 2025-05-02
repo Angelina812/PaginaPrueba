@@ -65,56 +65,66 @@
   </section>
 
     <!-- Sección de Servicios -->
-    <h2 class="text-3xl font-bold">Nuestros servicios</h2>
-    <div class="relative servicios">
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Nuestros servicios</h2>
+      <div class="relative w-[1152px] mx-auto">
+    
         <!-- Flecha izquierda -->
-        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full">
+        <button id="prevBtn"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full hover:bg-gray-100 transition">
           <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
-            d="M15 19l-7-7 7-7" /></svg>
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
     
-        <!-- Contenedor de tarjetas -->
+        <!-- Ventana visible de 3 tarjetas -->
         <div class="overflow-hidden">
-          <div class="flex transition-transform duration-500 space-x-6">
+          <div id="carouselContainer" class="flex flex-nowrap transition-transform duration-500 space-x-6">
             <!-- Tarjeta 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-              <img src="../img/planescompletos.png" alt="Servicio 1" class="w-full h-40 object-cover rounded-md mb-4">
+            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
+              <img src="../img/planescompletos.jpg" alt="Planes Completos"
+                   class="w-full h-48 object-cover rounded-md mb-4">
               <h3 class="text-xl font-semibold mb-2">Planes Completos</h3>
               <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
             </div>
     
             <!-- Tarjeta 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-              <img src="../img/hoteles+vuelos.jpeg" alt="Servicio 2" class="w-full h-40 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Vuelos + hotel </h3>
+            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
+              <img src="../img/vuelos+hotel.png" alt="Vuelos + hotel"
+                   class="w-full h-48 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Vuelos + hotel</h3>
               <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
             </div>
     
             <!-- Tarjeta 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-              <img src="../img/tours.jpeg" alt="Servicio 3" class="w-full h-40 object-cover rounded-md mb-4">
+            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
+              <img src="../img/tours.png" alt="Tours"
+                   class="w-full h-48 object-cover rounded-md mb-4">
               <h3 class="text-xl font-semibold mb-2">Tours</h3>
               <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
             </div>
     
             <!-- Tarjeta 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-              <img src="../img/grupos.png" alt="Servicio 4" class="w-full h-40 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Planes para grupos </h3>
+            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
+              <img src="../img/grupos.png" alt="Planes para grupos"
+                   class="w-full h-48 object-cover rounded-md mb-4">
+              <h3 class="text-xl font-semibold mb-2">Planes para grupos</h3>
               <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
             </div>
     
             <!-- Tarjeta 5 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-              <img src="../img/vuelos.jpeg" alt="Servicio 5" class="w-full h-40 object-cover rounded-md mb-4">
+            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
+              <img src="../img/vuelos.png" alt="Vuelos"
+                   class="w-full h-48 object-cover rounded-md mb-4">
               <h3 class="text-xl font-semibold mb-2">Vuelos</h3>
               <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
             </div>
     
             <!-- Tarjeta 6 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-              <img src="img/servicio6.jpg" alt="Servicio 6" class="w-full h-40 object-cover rounded-md mb-4">
+            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
+              <img src="../img/hoteles.jpg" alt="Hoteles"
+                   class="w-full h-48 object-cover rounded-md mb-4">
               <h3 class="text-xl font-semibold mb-2">Hoteles</h3>
               <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
             </div>
@@ -122,16 +132,18 @@
         </div>
     
         <!-- Flecha derecha -->
-        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full">
+        <button id="nextBtn"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full hover:bg-gray-100 transition">
           <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
-            d="M9 5l7 7-7 7" /></svg>
-        </button>
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button> 
       </div>
     </section>
 
 
-
+ramaDairo
 <!-- Sección de Nosotros -->
 <section id="quienes-somos" class="quienes-fondo  py-20 px-6">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
@@ -217,6 +229,7 @@
         </div>
       </div>
     </section>
+    
         <!-- Aquí puedes agregar contenido adicional de nosotros -->
     </section>
 
