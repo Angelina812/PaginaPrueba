@@ -20,47 +20,44 @@ function closeMenu () {
         }
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const carousel     = document.getElementById("carouselContainer");
-        const nextBtn      = document.getElementById("nextBtn");
-        const prevBtn      = document.getElementById("prevBtn");
-        const visibleCards = 3;    // siempre 3 a la vista
-        const stepCards    = 2;    // avanzamos/restamos 2
-        const totalCards   = carousel.children.length;
-      
-        // Medimos ancho de tarjeta + espacio (space-x-6 → 24px)
-        const firstCard = carousel.children[0];
-        const styles    = getComputedStyle(carousel);
-        const gap       = parseInt(styles.gap) || 24;
-        const cardWidth = firstCard.offsetWidth + gap;
-      
-        let currentIndex = 0;
-      
-        function goTo(index) {
-          currentIndex = index;
-          carousel.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
-        }
-      
-        nextBtn.addEventListener("click", () => {
-          let next = currentIndex + stepCards;
-          if (next > totalCards - visibleCards) next = 0;
-          goTo(next);
-        });
-      
-        prevBtn.addEventListener("click", () => {
-          let prev = currentIndex - stepCards;
-          if (prev < 0) prev = totalCards - visibleCards;
-          goTo(prev);
-        });
-      
-        // === AUTO-SLIDE ===
-        let autoSlide = setInterval(() => nextBtn.click(), 3000);
-      
-        // Opcional: si quieres pausar al pasar el ratón:
-        const wrapper = carousel.closest(".relative");
-        wrapper.addEventListener("mouseenter", () => clearInterval(autoSlide));
-        wrapper.addEventListener("mouseleave", () => {
-          autoSlide = setInterval(() => nextBtn.click(), 3000);
-        });
-      });
-      
+    const carousel = document.getElementById('carousel');
+let cardWidth = carousel.querySelector('div').offsetWidth;
+let currentIndex = 0;
+const totalCards = 6;
+const visibleCards = 3;
+
+function updateCarousel() {
+  cardWidth = carousel.querySelector('div').offsetWidth; // Actualiza el ancho en caso de resize
+  const offset = cardWidth * currentIndex;
+  carousel.style.transform = `translateX(-${offset}px)`;
+}
+
+function nextSlide() {
+  if (currentIndex < totalCards - visibleCards) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // Reinicia al principio
+  }
+  updateCarousel();
+}
+
+function prevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+  }
+  updateCarousel();
+}
+
+window.addEventListener('resize', updateCarousel);
+
+// === Auto-slide cada 3 segundos ===
+let autoSlide = setInterval(nextSlide, 3000);
+
+// === Pausar al pasar el mouse por encima del carrusel ===
+carousel.addEventListener('mouseenter', () => {
+  clearInterval(autoSlide);
+});
+
+carousel.addEventListener('mouseleave', () => {
+  autoSlide = setInterval(nextSlide, 3000);
+});
