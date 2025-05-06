@@ -1,146 +1,162 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Vacation</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans">
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dream Vacation</title>
+      <link rel="stylesheet" href="styles.css">
+      <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans">
 
-    <!-- Navbar Sticky -->
-    <nav class="sticky top-0 shadow-md flex justify-between items-center px-6 py-4 z-50">
-        <!-- Logo Izquierdo -->
-        <div class="flex items-center">
-            <img src="../img/logo.png" alt="Logo" class="h-16">
-        </div>
-        <!-- Menú Derecho -->
-        <div class="flex items-center space-x-6">
-            <a href="#inicio" class= " text-white font-bold">Inicio</a>
-            <a href="#quienes-somos" class=" text-white font-bold ">Quiénes Somos</a>
-
-            <!-- Servicios desplegable -->
-            <div class="relative group " id="menu-container">
-                 
-                 <a href="#servicios" class=" text-white font-bold"> Servicios </a> 
-                 <button  
-                 onclick="toggleMenu()" class=" text-white font-bold"> ▾ </button> 
-        
-                <div 
-                  id="dropdown-menu"
-                  class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded z-50 "
-                  onmouseenter="keepMenuOpen()" 
-                  onmouseleave="closeMenu()"
-                >
-                  <a href="#paquetes" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Paquetes Completos</a>
-                  <a href="#hotel" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Hotel</a>
-                  <a href="#vuelos" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Vuelos</a>
-                  <a href="#tours" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Tours</a>
-                  <a href="#asesorias" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Asesorías</a>
-                </div>
-              </div>
-
-            <a href="#contactanos" class=" text-white font-bold">Contáctanos</a>
-
-            <!-- Logo de inicio de sesión -->
-            <a href="#login">
-                <img src="../img/login.png" alt="Login" class="h-8">
-            </a>
-        </div>
-    </nav>
-
-   <!-- Imagen de fondo con texto centrado -->
-   <section class="relative h-screen bg-personalizado">   
-    <div class="absolute inset-0 bg-black bg-opacity-25 flex flex-col justify-start items-center text-center text-white pt-10 px-4">
-        <img src="../img/logo.png" alt="logo" class="w-42 ">  
-        <h1 class="text-4xl md:text-6xl font-bold">¡Descubre el mundo con nosotros!</h1>
-        <p class="mt-4 text-lg md:text-2xl max-w-3xl">
-            En <b>Dream Vacation</b>, creemos que cada viaje es una oportunidad 
-            para crear recuerdos inolvidables. Somos tu aliado en el turismo, ofreciendo paquetes turísticos
-            a medida para satisfacer tus sueños de aventura y relajación.
-        </p>
-        <button class="mt-6 px-6 py-3 rounded-full font-bold boton-1"> Cotiza aqui</button>
-    </div>
-  </section>
-
-    <!-- Sección de Servicios -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Nuestros servicios</h2>
-      <div class="relative w-[1152px] mx-auto">
-    
-        <!-- Flecha izquierda -->
-        <button id="prevBtn"
-          class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full hover:bg-gray-100 transition">
-          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-    
-        <!-- Ventana visible de 3 tarjetas -->
-        <div class="overflow-hidden">
-          <div id="carouselContainer" class="flex flex-nowrap transition-transform duration-500 space-x-6">
-            <!-- Tarjeta 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
-              <img src="../img/planescompletos.jpg" alt="Planes Completos"
-                   class="w-full h-48 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Planes Completos</h3>
-              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
-            </div>
-    
-            <!-- Tarjeta 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
-              <img src="../img/vuelos+hotel.png" alt="Vuelos + hotel"
-                   class="w-full h-48 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Vuelos + hotel</h3>
-              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
-            </div>
-    
-            <!-- Tarjeta 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
-              <img src="../img/tours.png" alt="Tours"
-                   class="w-full h-48 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Tours</h3>
-              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
-            </div>
-    
-            <!-- Tarjeta 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
-              <img src="../img/grupos.png" alt="Planes para grupos"
-                   class="w-full h-48 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Planes para grupos</h3>
-              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
-            </div>
-    
-            <!-- Tarjeta 5 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
-              <img src="../img/vuelos.png" alt="Vuelos"
-                   class="w-full h-48 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Vuelos</h3>
-              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
-            </div>
-    
-            <!-- Tarjeta 6 -->
-            <div class="bg-white p-6 rounded-lg shadow-md w-[384px] flex-shrink-0 tarjetas">
-              <img src="../img/hoteles.jpg" alt="Hoteles"
-                   class="w-full h-48 object-cover rounded-md mb-4">
-              <h3 class="text-xl font-semibold mb-2">Hoteles</h3>
-              <a href="#" class="text-blue-500 hover:underline">Ver más...</a>
-            </div>
+      <!-- Navbar Sticky -->
+      <nav class="sticky top-0 shadow-md flex justify-between items-center px-6 py-4 z-50">
+          <!-- Logo Izquierdo -->
+          <div class="flex items-center">
+              <img src="../img/logo.png" alt="Logo" class="h-16 logo-1">
           </div>
-        </div>
-    
-        <!-- Flecha derecha -->
-        <button id="nextBtn"
-          class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full hover:bg-gray-100 transition">
-          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button> 
+          <!-- Menú Derecho -->
+          <div class="flex items-center space-x-6">
+              <a href="#inicio" class= " text-white font-bold">Inicio</a>
+              <a href="#quienes-somos" class=" text-white font-bold ">Quiénes Somos</a>
+
+              <!-- Servicios desplegable -->
+              <div class="relative group " id="menu-container">
+                  
+                  <a href="#Servicios" class=" text-white font-bold"> Servicios </a> 
+                  <button  
+                  onclick="toggleMenu()" class=" text-white font-bold"> ▾ </button> 
+          
+                  <div 
+                    id="dropdown-menu"
+                    class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded z-50 "
+                    onmouseenter="keepMenuOpen()" 
+                    onmouseleave="closeMenu()"
+                  >
+                    <a href="#paquetes" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Paquetes Completos</a>
+                    <a href="#hotel" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Hotel</a>
+                    <a href="#vuelos" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Vuelos</a>
+                    <a href="#tours" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Tours</a>
+                    <a href="#asesorias" class="block px-5 py-2 text-gray-700 hover:bg-gray-100 text-base">Asesorías</a>
+                  </div>
+                </div>
+
+              <a href="#contactanos" class=" text-white font-bold">Contáctanos</a>
+
+              <!-- Logo de inicio de sesión -->
+              <a href="#login">
+                  <img src="../img/login.png" alt="Login" class="h-8">
+              </a>
+          </div>
+      </nav>
+
+    <!-- Imagen de fondo con texto centrado -->
+    <section id= "inicio" class="relative h-screen bg-personalizado">   
+      <div class="absolute inset-0 bg-black bg-opacity-25 flex flex-col justify-start items-center text-center text-white pt-10 px-4">
+          <img src="../img/logo.png" alt="logo" class="w-42 ">  
+          <h1 class="text-4xl md:text-6xl font-bold">¡Descubre el mundo con nosotros!</h1>
+          <p class="mt-4 text-lg md:text-2xl max-w-3xl">
+              En <b>Dream Vacation</b>, creemos que cada viaje es una oportunidad 
+              para crear recuerdos inolvidables. Somos tu aliado en el turismo, ofreciendo paquetes turísticos
+              a medida para satisfacer tus sueños de aventura y relajación.
+          </p>
+          <button class="mt-6 px-6 py-3 rounded-full font-bold boton-1"> Cotiza aqui</button>
       </div>
     </section>
+
+      <!-- Sección de Servicios -->
+      <section id="Servicios" class="py-10 scroll-px-8 bg-white-100">
+        <h2 class="text-3xl font-bold mb-4">Nuestros servicios</h2>
+          <div class="relative max-w-8xl mx-auto">
+            <!-- Contenedor del carrusel -->
+            <div class="overflow-hidden relative">
+              <!-- Carrusel -->
+              <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                
+                <!-- Tarjeta 1 -->
+                <div class="min-w-[33.3333%] px-4">
+                  <div class="bg-white rounded-xl custom-border overflow-hidden">                    <img src="../img/planescompletos.jpg" class="w-full h-48 object-cover" alt="Planes completos">
+                    <div class="p-4 text-center">
+                      <h3 class="font-bold text-lg text-gray-800">Planes Completos</h3>
+                      <p class="mt-2 text-sm text-gray-600">Disfruta de  nuestros paquetes todo incluido y viaja con total tranquilidad, sin preocuparte por los detalles.</p>
+                      <button class="mt-4 text-white px-4 py-2 rounded-full boton-cotiza">Cotiza Ya!</button>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Tarjeta 2 -->
+                <div class="min-w-[33.3333%] px-4">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="../img/tours.png" class="w-full h-48 object-cover" alt="Tours">
+                    <div class="p-4 text-center">
+                      <h3 class="font-bold text-lg text-gray-800">Tours</h3>
+                      <p class="mt-2 text-sm text-gray-600">Explora cada destino al máximo con nuestros tours seleccionados para brindarte experiencias inolvidables.</p>
+                        <button class="mt-4 text-white px-4 py-2 rounded-full boton-cotiza">Cotiza Ya!</button>
+                      </div>
+                  </div>
+                </div>
+        
+                <!-- Tarjeta 3 -->
+                <div class="min-w-[33.3333%] px-4">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="../img/hoteles+vuelos.jpeg" class="w-full h-48 object-cover" alt="Vuelos + hotel">
+                    <div class="p-4 text-center">
+                      <h3 class="font-bold text-lg text-gray-800">Vuelos + hotel</h3>
+                      <p class="mt-2 text-sm text-gray-600">Reserva tu vuelo y alojamiento en un solo paso con nuestras opciones combinadas diseñadas para tu comodidad.</p>
+                      <button class="mt-4 text-white px-4 py-2 rounded-full boton-cotiza">Cotiza Ya!</button>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Tarjeta 4 -->
+                <div class="min-w-[33.3333%] px-4">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="../img/grupos.png" class="w-full h-48 object-cover" alt="Grupos">
+                    <div class="p-4 text-center">
+                      <h3 class="font-bold text-lg text-gray-800">Grupos</h3>
+                      <p class="mt-2 text-sm text-gray-600">Aprovecha tarifas especiales y beneficios exclusivos para viajes en grupo, ya sea con amigos, familia o empresa.</p>
+                      <button class="mt-4 text-white px-4 py-2 rounded-full boton-cotiza">Cotiza Ya!</button>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Tarjeta 5 -->
+                <div class="min-w-[33.3333%] px-4">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="../img/hoteles.jpg" class="w-full h-48 object-cover" alt="Hoteles">
+                    <div class="p-4 text-center">
+                      <h3 class="font-bold text-lg text-gray-800">Hoteles</h3>
+                      <p class="mt-2 text-sm text-gray-600">Encuentra el hospedaje ideal según tus necesidades y preferencias, con diferentes opciones en tu destino soñado.</p>
+                      <button class="mt-4 text-white px-4 py-2 rounded-full boton-cotiza">Cotiza Ya!</button>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Tarjeta 6 -->
+                <div class="min-w-[33.3333%] px-4">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="../img/vuelos.png" class="w-full h-48 object-cover" alt="Vuelos">
+                    <div class="p-4 text-center">
+                      <h3 class="font-bold text-lg text-gray-800">Vuelos</h3>
+                      <p class="mt-2 text-sm text-gray-600">Elige el itinerario que mejor se adapte a tu viaje, con múltiples aerolíneas y horarios disponibles desde tu ciudad.</p>
+                      <button class="mt-4 text-white px-4 py-2 rounded-full boton-cotiza">Cotiza Ya!</button>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+        
+            <!-- Flechas -->
+            <button onclick="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-2 rounded-full  z-10 boton-flecha">
+              <img src="../img/flecha iz.png" alt="top-1/2" class="w-12 h-12">
+            </button>
+            <button onclick="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2  text-white p-2 rounded-full  z-10 boton-flecha">
+            <img src="../img/flecha.png" alt="top-1/2" class="w-12 h-12">
+            </button>
+          </div>
+      
+    <br> <br>
 
 
 
@@ -198,49 +214,153 @@
         <!-- Aquí puedes agregar un formulario de contacto -->
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Redes Sociales -->
-            <div>
-                <h3 class="font-bold mb-4">Redes Sociales</h3>
-                <ul>
-                    <li><a href="#" class="hover:underline">Facebook</a></li>
-                    <li><a href="#" class="hover:underline">Instagram</a></li>
-                    <li><a href="#" class="hover:underline">Twitter</a></li>
-                </ul>
-            </div>
+  <!-- Sección de Nosotros -->
+  <section id="quienes-somos" class="quienes-fondo  py-20 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <img src="../img/todos.jpeg" class="imagen-redonda"> 
+      <!-- Texto -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
 
-            <!-- Política y Certificados -->
-            <div>
-                <h3 class="font-bold mb-4">Política y Certificados</h3>
-                <ul>
-                    <li><a href="#" class="hover:underline">Política de Privacidad</a></li>
-                    <li><a href="#" class="hover:underline">Términos y Condiciones</a></li>
-                    <li><a href="#" class="hover:underline">Certificados de Calidad</a></li>
-                </ul>
-            </div>
-
-            <!-- Preguntas Frecuentes -->
-            <div>
-                <h3 class="font-bold mb-4">Preguntas Frecuentes</h3>
-                <ul>
-                    <li><a href="#" class="hover:underline">¿Cómo reservar?</a></li>
-                    <li><a href="#" class="hover:underline">¿Formas de pago?</a></li>
-                    <li><a href="#" class="hover:underline">¿Políticas de cancelación?</a></li>
-                </ul>
-            </div>
-
-            <!-- Logo o Información Extra -->
-            <div class="flex items-center justify-center md:justify-end">
-                <img src="ruta-a-logo-footer.png" alt="Logo Footer" class="h-12">
-            </div>
+        <h2 class="text-3xl font-bold mb-4">¿Por que confiar en nosotros?</h2>
+        <p class="text-gray-600">Somos una agencia de viajes y turismo con más de 10 años de experiencia cumpliendo los sueños de miles de viajeros. Nos dedicamos a crear experiencias inolvidables a través de planes nacionales e internacionales todo incluido, en los mejores hoteles de cada destino. Nuestro compromiso es ofrecerte un servicio personalizado, confiable y de calidad, para que tu única preocupación sea disfrutar al máximo.</p>
+        
+          <!--imagen con el texto-->
+          <div class="footer-column"> <!--columna 3 footer-->
+            
+            <ul class="logos">
+              <li>
+                <img src="../img/calidad.png" alt="Calidad" class="img-calidad">
+                <p>Certificaciones en calidad.</p> <!-- Texto debajo del logo -->
+              </li>
+              <li>
+                <img src="../img/experiencia.png" alt="experiencia" class="img-experiencia">
+                <p>Mas de 10 años de experiencia.</p> <!-- Texto debajo del logo -->
+              </li>
+              <li>
+                <img src="../img/asesoria.png" alt="asesoria" class="img-asesoria">
+                <p>Linea de atencion 24/7</p> <!-- Texto debajo del logo -->
+              </li>
+              <li>
+                <img src="../img/buenservicio.png" alt="buenservicio" class="img-buenservicio">
+                <p>Servicio seleccionado.</p> <!-- Texto debajo del logo -->
+              </li>
+            </ul>
+          </div>
+        
+        <div class="boton-container">
+          <a href="#conocenos" class="btn-conocenos">Conócenos</a>
         </div>
-        <div class="text-center mt-8 text-gray-400 text-sm">
-            © 2025 Tu Empresa - Todos los derechos reservados.
+      </div>
+    </div>
+  </section>
+      <!-- Aquí puedes agregar contenido adicional de nosotros -->
+  </section>
+
+      <!-- Sección de Contáctanos -->
+      <section class="bg-gray-100 py-12 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+          
+          <!-- Formulario -->
+          <div class="bg-white p-6 rounded-xl shadow-md w-full">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Contáctanos</h2>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Nombre</label>
+                <input type="text" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Correo</label>
+                <input type="email" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Celular</label>
+                <input type="tel" class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Mensaje</label>
+                <textarea class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="¡Estoy interesado en cotizar un viaje..."></textarea>
+              </div>
+              <button type="submit" class="text-white px-6 py-2 rounded-full boton-cotiza">Enviar</button>
+            </form>
+          </div>
+      
+          <!-- Información de sedes -->
+          <div class="space-y-6">
+            <!-- Sede 1 -->
+            <div class="relative">
+              <img src="ruta-a-tu-imagen1.jpg" alt="Sede 1" class="rounded-xl w-full h-48 object-cover">
+              <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-3 rounded-lg shadow text-sm">
+                <p class="font-bold"> 📍 Calle 19 # 30-16 las cuadras, Pasto, Nariño</p>
+                <p>📞 Celular: 300 123 4567</p>
+              </div>
+            </div>
+            <!-- Sede 2 -->
+            <div class="relative">
+              <img src="ruta-a-tu-imagen2.jpg" alt="Sede 2" class="rounded-xl w-full h-48 object-cover">
+              <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-3 rounded-lg shadow text-sm">
+                <a href="https://www.google.com/maps/place/Dream+Vacation/@1.2197222,-77.2800405,15z/data=!4m16!1m9!3m8!1s0x8e2ed487584aa845:0xd333399d77eb9276!2sCl+19+%2330-16,+Pasto,+Nari%C3%B1o!3b1!8m2!3d1.219772!4d-77.2799338!10e5!16s%2Fg%2F11x7181k34!3m5!1s0x8e2ed54220932595:0x70a0572af374e143!8m2!3d1.219772!4d-77.2799338!16s%2Fg%2F11px4x48yw?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D" 
+                target="_blank" class="text-blue-600 underline hover:text-blue-800">📍Calle 20 # 34-34 Av los estudiantes, Pasto, Nariño</a>
+                <p>📞 Celular: 301 234 5678</p>
+              </div>
+            </div>
+            <!-- Sede 3 -->
+            <div class="relative">
+              <img src="ruta-a-tu-imagen3.jpg" alt="Sede 3" class="rounded-xl w-full h-48 object-cover">
+              <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-3 rounded-lg shadow text-sm">
+                <p class="font-bold">📍Cc Zafiro, Ipiales</p>
+                <p>📞 Celular: 302 345 6789</p>
+              </div>
+            </div>
+          </div>
+      
         </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+      </section>
+      
+
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-10 px-6">
+          <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+              <!-- Redes Sociales -->
+              <div>
+                  <h3 class="font-bold mb-4">Redes Sociales</h3>
+                  <ul>
+                      <li><a href="#" class="hover:underline">Facebook</a></li>
+                      <li><a href="#" class="hover:underline">Instagram</a></li>
+                      <li><a href="#" class="hover:underline">Twitter</a></li>
+                  </ul>
+              </div>
+
+              <!-- Política y Certificados -->
+              <div>
+                  <h3 class="font-bold mb-4">Política y Certificados</h3>
+                  <ul>
+                      <li><a href="#" class="hover:underline">Política de Privacidad</a></li>
+                      <li><a href="#" class="hover:underline">Términos y Condiciones</a></li>
+                      <li><a href="#" class="hover:underline">Certificados de Calidad</a></li>
+                  </ul>
+              </div>
+
+              <!-- Preguntas Frecuentes -->
+              <div>
+                  <h3 class="font-bold mb-4">Preguntas Frecuentes</h3>
+                  <ul>
+                      <li><a href="#" class="hover:underline">¿Cómo reservar?</a></li>
+                      <li><a href="#" class="hover:underline">¿Formas de pago?</a></li>
+                      <li><a href="#" class="hover:underline">¿Políticas de cancelación?</a></li>
+                  </ul>
+              </div>
+
+              <!-- Logo o Información Extra -->
+              <div class="flex items-center justify-center md:justify-end">
+                  <img src="ruta-a-logo-footer.png" alt="Logo Footer" class="h-12">
+              </div>
+          </div>
+          <div class="text-center mt-8 text-gray-400 text-sm">
+              © 2025 Tu Empresa - Todos los derechos reservados.
+          </div>
+      </footer>
+      <script src="script.js"></script>
+  </body>
+  </html>
 

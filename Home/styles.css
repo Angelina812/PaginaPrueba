@@ -16,6 +16,12 @@ body{
   background-color: #ffffff;
 }
 
+.logo-1 {
+  transition:transform 0.2s ease;
+}
+.logo-1:hover{
+  transform: scale(1.2);
+}
 .bg-personalizado {
   background-image: url('../img/Playa1.jpg'); 
   background-size: cover;
@@ -25,10 +31,17 @@ body{
 
 .boton-1 {
   background-color: #045f78;	
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 10%;
 }
+
 .boton-1:hover{
-  background-color: #0694ab;  
+  background-color: #0694ab; 
+  transform: scale(1.05) 
+}
+.boton-1:active {
+  transform: scale(1); /* Reduce el agrandamiento al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra al hacer clic */
 }
 
 .tarjetas {
@@ -38,7 +51,7 @@ body{
   transform: scale(1.1); 
 }
 
-ramaDairo
+/*ramaDairo*/
 /*CSS IMAGEN TODOS*/
 
 
@@ -196,7 +209,24 @@ h2{
 h2{
   text-align: center;
 }
-.tarjetas{
-  border: 2px solid #0694ab;
-  padding: 16px;
+.boton-cotiza {
+  background-color: #045f78;	
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.boton-cotiza:hover {
+  background-color: #0694ab;  
+  transform: scale(1.05);
+}
+.boton-cotiza:active {
+  transform: scale(1); /* Reduce el agrandamiento al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra al hacer clic */
+}
+.custom-border {
+  border: 3px solid #2563eb; /* azul Tailwind (blue-600) */
+  border-radius: 1rem; /* igual a rounded-xl */
+  transition: border-color 0.3s ease;
+}
+
+.custom-border:hover {
+  border-color: #1d4ed8; /* un azul más oscuro al pasar el mouse (blue-700) */
 }
