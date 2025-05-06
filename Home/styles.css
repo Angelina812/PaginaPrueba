@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 nav {
-  background-color:  #0694ab ; 
+  background-color: 	#4ed8e7 ; 
   font-size: 1.25rem;
 }
 nav a {
@@ -53,16 +53,47 @@ body{
 
 /*ramaDairo*/
 /*CSS IMAGEN TODOS*/
+
+
 .imagen-nosotros {
   background-image: url('ruta/a/tu-imagen.jpg'); /* Cambia esta ruta */
 }
-
 
 .imagen-redonda {
   width: 580px;
   height: 500px;
   border-radius:10%;
   object-fit: cover; /* Esto asegura que la imagen se recorte bien */
+}
+
+/*IMAGEN DE TODOS Y EL TEXTO CON ANIMACION*/
+
+@keyframes scaleRotateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg); /* Comienza más pequeño y girado */
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg); /* Se expande un poco y gira hacia el otro lado */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Vuelve al tamaño normal y sin rotación */
+  }
+}
+
+.imagen-redonda {
+  animation: scaleRotateIn 1s ease-out;
+}
+
+.texto {
+  animation: scaleRotateIn 1s ease-out;
+  animation-delay: 0.2s; /* El texto se retrasa un poco */
+}
+
+.footer-column {
+  animation: scaleRotateIn 1s ease-out;
+  animation-delay: 0.4s; /* Los íconos se retrasan un poco más */
 }
 
 
@@ -96,7 +127,7 @@ body{
 
 .btn-conocenos:active {
   transform: scale(1); /* Reduce el agrandamiento al hacer clic */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra al hacer cli add .c */
 }
 
 .btn-conocenos{
@@ -168,8 +199,7 @@ h2{
 
 .quienes-fondo {
   background-color: #ffffff; /* Azul claro, cambia al que quieras */
-}
-.imagen-servicio {
+}.imagen-servicio {
   width: 300%;
   height: 200px;         
   border-radius: 8px;    
